@@ -16,20 +16,22 @@ if sys.stdout.encoding != "utf-8":
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "https://hoatuoithanhngoc.com",
-    "https://www.hoatuoithanhngoc.com",
-    "https://hoatuoithanhngoc-q8afwdl8u-phong784s-projects.vercel.app",
-    "https://hoatuoithanhngoc.vercel.app",
-    "https://hoatuoithanhngoc-production.up.railway.app",
-    "http://localhost:5173",
-    "http://localhost:5000",
-    "http://127.0.0.1:5500",
-])
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+CORS(app) # Cho phép tất cả cho đến khi hoạt động ổn định
+
+GROQ_KEY = os.environ.get("GROQ_API_KEY")
+client = Groq(api_key=GROQ_KEY)
 
 OA_ACCESS_TOKEN = os.environ.get("ZALO_OA_TOKEN")
 ZALO_API = "https://openapi.zalo.me/v3.0/oa/message/cs"
+
+@app.route("/", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "online",
+        "bot_name": "Ngọc",
+        "groq_key_set": bool(GROQ_KEY),
+        "zalo_token_set": bool(OA_ACCESS_TOKEN)
+    })
 
 conversation_history = {}
 greeted_users = set()
@@ -206,12 +208,17 @@ def chat():
     if not message:
         return jsonify({"error": "empty message"}), 400
     try:
+        print(f"--- Nhận tin nhắn: {message} (session: {session_id}) ---")
+        if not GROQ_KEY:
+            return jsonify({"reply": "Chào anh/chị, em chưa được gắn API Key AI. Vui lòng kiểm tra lại cấu hình ạ!"}), 200
+            
         reply, category = get_ai_reply("web_" + session_id, message)
         images = get_random_images(category, n=3) if category else []
+        print(f"--- Phản hồi: {reply[:50]}... (cat: {category}) ---")
         return jsonify({"reply": reply, "images": images})
     except Exception as e:
-        print(f"Chat error: {e}")
-        return jsonify({"reply": "Xin lỗi anh/chị, em gặp sự cố. Vui lòng thử lại sau hoặc gọi 093 492 6092 ạ!"}), 200
+        print(f"❌ Lỗi Chat API: {e}")
+        return jsonify({"reply": f"Dạ, em gặp chút lỗi: {str(e)}. Anh/chị gọi 093 492 6092 giúp em nhé!"}), 200
 
 
 @app.route("/zalo_verifier<path:filename>")
