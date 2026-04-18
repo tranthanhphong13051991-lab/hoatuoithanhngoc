@@ -19,9 +19,12 @@ app = Flask(__name__)
 CORS(app, origins=[
     "https://hoatuoithanhngoc.com",
     "https://www.hoatuoithanhngoc.com",
-    "https://hoatuoithanhngoc-main.vercel.app",
+    "https://hoatuoithanhngoc-q8afwdl8u-phong784s-projects.vercel.app",
+    "https://hoatuoithanhngoc.vercel.app",
+    "https://hoatuoithanhngoc-production.up.railway.app",
     "http://localhost:5173",
-    "http://localhost:4173",
+    "http://localhost:5000",
+    "http://127.0.0.1:5500",
 ])
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 

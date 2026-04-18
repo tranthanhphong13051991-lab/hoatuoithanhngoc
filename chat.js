@@ -1,6 +1,6 @@
 // Chat AI Widget — Hoa Tươi Thanh Ngọc
 (function () {
-  const CHAT_API = "http://localhost:5000"; // Local test — đổi thành URL Railway sau khi deploy
+  const CHAT_API = "https://hoatuoithanhngoc-production.up.railway.app"; // Railway bot
 
   // Session ID cố định cho mỗi trình duyệt
   function getSessionId() {
