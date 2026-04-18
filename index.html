@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thanh Ngọc Flower's - Cửa hàng hoa tươi đẹp nhất, giao hoa nhanh tận nơi với nhiều mẫu hoa độc đáo, tinh tế.">
+    <title>Thanh Ngọc Flower's - Hoa Tươi Tinh Tế</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="#home" class="logo" id="logo-link">
+                <img src="image/logo.png" alt="Thanh Ngọc Flower's" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">Thanh Ngọc<span class="logo-sub"> Flower's</span></span>
+            </a>
+
+            <nav id="main-nav">
+                <ul id="nav-list">
+                    <li><a href="#home"     class="nav-link active" id="nav-home">Trang Chủ</a></li>
+                    <li><a href="#products" class="nav-link"        id="nav-products">Sản Phẩm</a></li>
+                    <li><a href="#about"    class="nav-link"        id="nav-about">Giới Thiệu</a></li>
+                    <li><a href="#founders" class="nav-link"        id="nav-founders">Người Sáng Lập</a></li>
+                    <li><a href="#contact"  class="nav-link"        id="nav-contact">Liên Hệ</a></li>
+                </ul>
+            </nav>
+
+            <a href="tel:0934926092" class="header-phone-btn" id="header-phone" aria-label="Gọi ngay">
+                <span>📞</span> <span class="header-phone-text">093 492 6092</span>
+            </a>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== HERO / BANNER ===== -->
+    <section id="home" class="banner">
+        <div class="banner-bg"></div>
+        <div class="banner-overlay"></div>
+        <div class="banner-particles">
+            <span class="particle">✿</span>
+            <span class="particle">❀</span>
+            <span class="particle">✾</span>
+            <span class="particle">✿</span>
+            <span class="particle">❁</span>
+        </div>
+        <div class="banner-content">
+            <p class="banner-sub">Hoa Tươi · Tinh Tế · Tận Tâm</p>
+            <h1 class="banner-title">Thanh Ngọc<br><em>Flower's</em></h1>
+            <p class="banner-desc">Gửi trọn yêu thương qua từng đóa hoa tươi thắm — Mỗi bó hoa là một lời nói từ trái tim</p>
+            <div class="banner-actions">
+                <a href="#products" class="btn-primary" id="btn-shop-now">Khám Phá Ngay</a>
+                <a href="#contact"  class="btn-outline" id="btn-order">Đặt Hoa Ngay</a>
+            </div>
+        </div>
+        <div class="banner-scroll-hint" aria-hidden="true">
+            <span class="scroll-line"></span>
+            <span class="scroll-text">Cuộn xuống</span>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES STRIP ===== -->
+    <div class="features-strip">
+        <div class="features-inner">
+            <div class="feature-item">
+                <span class="feature-icon">🌿</span>
+                <div>
+                    <strong>Hoa Tươi 100%</strong>
+                    <p>Nhập trực tiếp mỗi ngày</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🚚</span>
+                <div>
+                    <strong>Giao Hàng Nhanh</strong>
+                    <p>Tận nơi trong 2 giờ</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎀</span>
+                <div>
+                    <strong>Thiết Kế Theo Yêu Cầu</strong>
+                    <p>Cá nhân hoá từng bó hoa</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💌</span>
+                <div>
+                    <strong>Kèm Thiệp Miễn Phí</strong>
+                    <p>Viết lời chúc yêu thương</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SẢN PHẨM ===== -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <p class="section-label">Bộ Sưu Tập</p>
+            <h2 class="section-title">Hoa Tươi Nổi Bật</h2>
+            <p class="section-desc">Mỗi đóa hoa là một câu chuyện yêu thương được kể bằng ngôn ngữ của thiên nhiên</p>
+        </div>
+
+        <div class="products-filter" id="products-filter">
+            <!-- Tự động tạo bởi script.js -->
+        </div>
+
+        <ul class="products-grid" id="products-grid">
+            <!-- Tự động render bởi script.js từ products.js -->
+        </ul>
+    </section>
+
+    <!-- ===== GIỚI THIỆU ===== -->
+    <section id="about" class="about">
+        <div class="about-inner">
+            <div class="about-visual">
+                <div class="about-img-frame">
+                    <img src="image/about.jpg" alt="Cửa hàng Thanh Ngọc Flower's"
+                         onerror="this.src='https://placehold.co/500x600/E5F3F1/2A7B73?text=Thanh+Ngọc+Flower%27s'">
+                </div>
+                <div class="about-badge-float">
+                    <span class="about-badge-num">5+</span>
+                    <span class="about-badge-txt">Năm kinh nghiệm</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <p class="section-label">Về Chúng Tôi</p>
+                <h2 class="section-title">Nghệ Thuật Từ Thiên Nhiên</h2>
+                <p>Thanh Ngọc Flower's được thành lập với tâm huyết mang đến những đóa hoa tươi thắm nhất — nơi mỗi bó hoa không chỉ là quà tặng, mà là cảm xúc được chắt lọc và gửi trao với cả tấm lòng.</p>
+                <p>Chúng tôi tuyển chọn kỹ lưỡng từng bông hoa, thiết kế theo phong cách tối giản — thanh lịch, phù hợp với mọi dịp đặc biệt trong cuộc sống của bạn.</p>
+                <div class="about-stats">
+                    <div class="stat-item" id="stat-1">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Khách hàng tin yêu</span>
+                    </div>
+                    <div class="stat-item" id="stat-2">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Mẫu hoa độc đáo</span>
+                    </div>
+                    <div class="stat-item" id="stat-3">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-label">Đánh giá trung bình</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NGƯỜI SÁNG LẬP ===== -->
+    <section id="founders" class="founders">
+        <div class="founders-bg-deco" aria-hidden="true">
+            <span>✿</span><span>❀</span><span>✾</span>
+        </div>
+
+        <div class="section-header">
+            <p class="section-label">Câu Chuyện Của Chúng Tôi</p>
+            <h2 class="section-title">Người Giữ Hồn Tiệm Hoa</h2>
+            <p class="section-desc">Hơn hai mươi năm, không chỉ là hoa — đó là tình yêu, là ký ức, là những dấu mốc đời người</p>
+        </div>
+
+        <div class="founders-grid">
+
+            <!-- Người Sáng Lập -->
+            <article class="founder-card" id="founder-1">
+                <div class="founder-img-wrap">
+                    <img src="image/founder1.jpg" alt="Cô Thanh Ngọc — Người Sáng Lập Thanh Ngọc Flower's"
+                         onerror="this.src='https://placehold.co/520x680/E5F3F1/2A7B73?text=Cô+Thanh+Ngọc'">
+                    <div class="founder-img-overlay">
+                        <span class="founder-years">20+<small>năm</small></span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <div class="founder-role-badge">Người Sáng Lập</div>
+                    <h3 class="founder-name">Cô Thanh Ngọc</h3>
+                    <p class="founder-subtitle">Người Giữ Hồn Tiệm Hoa</p>
+                    <div class="founder-divider"></div>
+                    <p class="founder-story">Từ những buổi sáng tinh mơ ở chợ hoa Hồ Thị Kỷ, cô Thanh Ngọc đã tự tay chọn từng cành hoa — ngắm sắc, nghe hương, để chắc chắn rằng mỗi bó đến tay khách đều là điều tươi đẹp nhất trong ngày của họ.</p>
+                    <p class="founder-story">20 năm, ba thế hệ khách hàng. Có những người đặt hoa cưới từ thời còn trẻ, nay đã quay lại đặt hoa cho con gái lấy chồng. Cô Thanh Ngọc nhớ hết — vì với cô, mỗi khách hàng là một câu chuyện, mỗi bó hoa là một dấu mốc đáng nhớ.</p>
+                    <div class="founder-tags">
+                        <span>✿ Chợ hoa Hồ Thị Kỷ</span>
+                        <span>✿ Ba thế hệ</span>
+                        <span>✿ 20 năm tận tâm</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Thế Hệ Tiếp Nối -->
+            <article class="founder-card founder-card--alt" id="founder-2">
+                <div class="founder-img-wrap">
+                    <img src="image/founder2.jpg" alt="Thanh Tiền — Thế hệ tiếp nối Thanh Ngọc Flower's"
+                         onerror="this.src='https://placehold.co/520x680/FAEEE9/E8856B?text=Thanh+Tiền'">
+                    <div class="founder-img-overlay founder-img-overlay--coral">
+                        <span class="founder-years">❤<small>tâm huyết</small></span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <div class="founder-role-badge founder-role-badge--next">Thế Hệ Tiếp Nối</div>
+                    <h3 class="founder-name">Thanh Tiền</h3>
+                    <p class="founder-subtitle">Đôi Tay Giữ Lửa Nghề</p>
+                    <div class="founder-divider founder-divider--coral"></div>
+                    <p class="founder-story">Lớn lên giữa hương hoa và tiếng bước chân sớm của mẹ, Thanh Tiền thấm vào mình tình yêu dành cho hoa từ khi còn nhỏ. Với anh, hoa không chỉ là hàng hóa — đó là ngôn ngữ của những cảm xúc mà ta khó nói thành lời.</p>
+                    <p class="founder-story">Hôm nay, đôi tay ấy — đôi tay được mẹ dạy cách trân trọng từng cành hoa, từng nhụy hoa mong manh — đang ngày ngày tạo nên những tác phẩm nghệ thuật tươi sống.</p>
+                    <blockquote class="founder-quote">
+                        <span class="quote-mark">"</span>
+                        Mỗi bó hoa mình làm ra, mình muốn người nhận cảm nhận được — có một người đã dành cả tâm huyết cho họ.
+                        <span class="quote-mark quote-mark--close">"</span>
+                    </blockquote>
+                    <div class="founder-tags">
+                        <span>✿ Nghệ thuật hoa</span>
+                        <span>✿ Truyền thống gia đình</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ===== LIÊN HỆ ===== -->
+    <section id="contact" class="contact">
+        <div class="contact-deco" aria-hidden="true">✿</div>
+        <div class="section-header">
+            <p class="section-label">Liên Hệ</p>
+            <h2 class="section-title">Đặt Hoa Cho Bạn</h2>
+            <p class="section-desc">Để lại thông tin — chúng tôi sẽ liên hệ và tư vấn bó hoa phù hợp nhất cho bạn</p>
+        </div>
+        <div class="contact-inner">
+            <div class="contact-info">
+                <div class="contact-item" id="contact-address">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <strong>Địa chỉ</strong>
+                        <p>8 Phan Văn Hân, Phường 19,<br>Bình Thạnh, TP. Hồ Chí Minh</p>
+                    </div>
+                </div>
+                <div class="contact-item" id="contact-phone">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <strong>Hotline</strong>
+                        <p>
+                            <a href="tel:0934926092">093 492 6092</a><br>
+                            <a href="tel:0866086574">086 608 6574</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-item" id="contact-email">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <strong>Email</strong>
+                        <p><a href="mailto:contact@hoatuoithanhngoc.com">contact@hoatuoithanhngoc.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item" id="contact-hours">
+                    <span class="contact-icon">🕐</span>
+                    <div>
+                        <strong>Giờ mở cửa</strong>
+                        <p>07:00 – 21:00 (Tất cả các ngày trong tuần)</p>
+                    </div>
+                </div>
+            </div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name-input">Họ và tên <span class="required">*</span></label>
+                        <input type="text" id="name-input" name="name" placeholder="Nhập họ tên của bạn" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone-input">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" id="phone-input" name="phone" placeholder="Nhập số điện thoại" required autocomplete="tel">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="occasion-input">Dịp tặng hoa</label>
+                    <select id="occasion-input" name="occasion">
+                        <option value="">— Chọn dịp —</option>
+                        <option value="birthday">Sinh nhật</option>
+                        <option value="anniversary">Kỷ niệm tình yêu</option>
+                        <option value="wedding">Đám cưới</option>
+                        <option value="graduation">Tốt nghiệp</option>
+                        <option value="other">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message-input">Yêu cầu đặc biệt</label>
+                    <textarea id="message-input" name="message" rows="4" placeholder="Mô tả bó hoa bạn muốn, màu sắc, ngân sách, hoặc lời nhắn đặc biệt..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width" id="submit-btn">
+                    Gửi Đơn Đặt Hoa &nbsp;✿
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <div class="footer-inner">
+
+            <!-- Cột 1: Brand -->
+            <div class="footer-col footer-col--brand">
+                <a href="#home" class="footer-logo-link">
+                    <img src="image/logo.png" alt="Thanh Ngọc Flower's" class="footer-logo-img"
+                         onerror="this.style.display='none'">
+                    <span class="footer-brand-name">Thanh Ngọc Flower's</span>
+                </a>
+                <p class="footer-desc">Hoa Tươi Thanh Ngọc — Nơi nghệ thuật hoa tươi được nâng tầm. Chúng tôi mang đến những thiết kế hoa độc đáo, tinh tế cho mọi dịp trong cuộc sống.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-btn" id="social-fb"   aria-label="Facebook">f</a>
+                    <a href="#" class="social-btn" id="social-zalo" aria-label="Zalo">Z</a>
+                    <a href="#" class="social-btn" id="social-ig"   aria-label="Instagram">◎</a>
+                </div>
+            </div>
+
+            <!-- Cột 2: Liên Hệ -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Liên Hệ</h3>
+                <ul class="footer-info-list">
+                    <li>
+                        <span class="footer-info-icon">📍</span>
+                        <span>8 Phan Văn Hân, Phường 19,<br>Bình Thạnh, TP. Hồ Chí Minh</span>
+                    </li>
+                    <li>
+                        <span class="footer-info-icon">📞</span>
+                        <span>
+                            <a href="tel:0934926092">093 492 6092</a><br>
+                            <a href="tel:0866086574">086 608 6574</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="footer-info-icon">🕐</span>
+                        <span>07:00 – 21:00<br>Tất cả các ngày trong tuần</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Cột 3: Danh Mục -->
+            <div class="footer-col">
+                <h3 class="footer-col-title">Danh Mục</h3>
+                <ul class="footer-nav-list">
+                    <li><a href="#products" id="footer-cat-1">✿ Bó Hoa</a></li>
+                    <li><a href="#products" id="footer-cat-2">✿ Giỏ Hoa</a></li>
+                    <li><a href="#products" id="footer-cat-3">✿ Hoa Khai Trương</a></li>
+                    <li><a href="#products" id="footer-cat-4">✿ Hoa Chia Buồn</a></li>
+                    <li><a href="#products" id="footer-cat-5">✿ Hoa Lan Hồ Điệp</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <p class="footer-copy">© 2024 <strong>Thanh Ngọc Flower's</strong> · Hoatuoithanhngoc.com</p>
+            <p class="footer-copy-right">Thiết kế với ❤ — Tất cả quyền được bảo lưu</p>
+        </div>
+    </footer>
+
+    <!-- ===== GIỎ HÀNG (MODAL) ===== -->
+    <!-- ===== MODAL CHI TIẾT SẢN PHẨM ===== -->
+    <div id="product-overlay" class="product-modal-overlay" role="dialog" aria-modal="true"></div>
+    <div id="product-modal" class="product-modal" aria-label="Chi tiết sản phẩm">
+        <button class="product-modal-close" id="close-product-modal" aria-label="Đóng">✕</button>
+        <div class="product-modal-inner" id="product-modal-inner">
+            <!-- Nội dung render bởi JS -->
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- ===== CHAT WIDGET ===== -->
+    <div id="chat-widget">
+      <button id="chat-toggle-btn" aria-label="Liên hệ">
+        <span id="chat-toggle-icon">💬</span>
+      </button>
+
+      <div id="chat-menu" class="chat-menu hidden">
+        <button id="open-ai-chat" class="chat-menu-item chat-menu-ai" title="Chat AI tư vấn">
+          ✨ <span class="chat-menu-label">Chat AI tư vấn</span>
+        </button>
+        <a href="https://zalo.me/0934926092" target="_blank" class="chat-menu-item chat-menu-zalo" title="Chat Zalo">
+          💬 <span class="chat-menu-label">Chat Zalo</span>
+        </a>
+        <a href="tel:0934926092" class="chat-menu-item chat-menu-phone" title="Gọi điện">
+          📞 <span class="chat-menu-label">Gọi điện ngay</span>
+        </a>
+      </div>
+
+      <div id="chat-box" class="chat-box hidden">
+        <div class="chat-header">
+          <div class="chat-header-info">
+            <span class="chat-avatar">🌸</span>
+            <div>
+              <div class="chat-header-name">Ngọc — Tư vấn viên</div>
+              <div class="chat-header-sub">Hoa Tươi Thanh Ngọc · AI</div>
+            </div>
+          </div>
+          <button id="close-chat" aria-label="Đóng">✕</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-msg bot">
+            <div class="chat-bubble">Xin chào anh/chị! Em là Ngọc, tư vấn viên của Hoa Tươi Thanh Ngọc 🌸 Anh/chị cần tư vấn gì ạ?</div>
+          </div>
+        </div>
+        <div class="chat-input-row">
+          <input id="chat-input" type="text" placeholder="Nhắn tin tư vấn..." autocomplete="off" />
+          <button id="chat-send">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>

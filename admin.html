@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị Sản Phẩm — Thanh Ngọc Flower's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+        <img src="image/logo.png" alt="Logo" onerror="this.style.display='none'">
+        <div>
+            <span class="sidebar-brand">Thanh Ngọc</span>
+            <span class="sidebar-sub">Flower's Admin</span>
+        </div>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="#" class="sidebar-link active" id="nav-products-link">
+            <span class="sidebar-icon">🌸</span> Sản Phẩm
+        </a>
+        <a href="index.html" class="sidebar-link" target="_blank">
+            <span class="sidebar-icon">🌐</span> Xem Trang Web
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <span>© 2024 Thanh Ngọc Flower's</span>
+    </div>
+</aside>
+
+<!-- ===== MAIN ===== -->
+<main class="admin-main">
+
+    <!-- Top bar -->
+    <header class="admin-topbar">
+        <div class="topbar-left">
+            <h1 class="topbar-title">Quản Lý Sản Phẩm</h1>
+            <span class="topbar-count" id="product-count">0 sản phẩm</span>
+        </div>
+        <button class="btn-add-new" id="btn-open-form">
+            + Thêm Sản Phẩm Mới
+        </button>
+    </header>
+
+    <!-- Toast -->
+    <div class="admin-toast" id="admin-toast"></div>
+
+    <!-- Product table -->
+    <div class="table-wrap">
+        <table class="product-table" id="product-table">
+            <thead>
+                <tr>
+                    <th style="width:70px">Ảnh</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th style="width:130px">Danh Mục</th>
+                    <th style="width:100px">Badge</th>
+                    <th style="width:130px">Slug SEO</th>
+                    <th style="width:120px; text-align:center">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody id="product-tbody">
+                <tr><td colspan="6" class="table-empty">Đang tải...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<!-- ===== FORM MODAL ===== -->
+<div class="form-overlay" id="form-overlay"></div>
+<aside class="form-panel" id="form-panel">
+    <div class="form-panel-header">
+        <h2 id="form-title">Thêm Sản Phẩm Mới</h2>
+        <button class="form-close" id="btn-close-form" aria-label="Đóng">✕</button>
+    </div>
+
+    <form id="product-form" class="product-form" novalidate>
+        <input type="hidden" id="field-id">
+
+        <!-- Tên -->
+        <div class="form-group">
+            <label for="field-name">Tên sản phẩm <span class="req">*</span></label>
+            <input type="text" id="field-name" placeholder="VD: Bó Hoa Hồng Đỏ Đam Mê" required>
+            <p class="field-hint">Đặt tên chuẩn SEO — bao gồm tên loài hoa và đặc điểm nổi bật</p>
+        </div>
+
+        <!-- Slug -->
+        <div class="form-group">
+            <label for="field-slug">Slug URL (tự động)</label>
+            <div class="slug-wrap">
+                <span class="slug-prefix">thanh-ngoc.vn/hoa/</span>
+                <input type="text" id="field-slug" placeholder="bo-hoa-hong-do-dam-me" readonly>
+            </div>
+        </div>
+
+        <!-- Danh mục -->
+        <div class="form-row-2">
+            <div class="form-group">
+                <label for="field-category-label">Tên danh mục <span class="req">*</span></label>
+                <input type="text" id="field-category-label" placeholder="VD: Bó Hoa" list="category-list" required>
+                <datalist id="category-list"></datalist>
+            </div>
+            <div class="form-group">
+                <label for="field-badge">Nhãn badge</label>
+                <select id="field-badge">
+                    <option value="">— Không có —</option>
+                    <option value="Bán Chạy">🔥 Bán Chạy</option>
+                    <option value="Mới">✨ Mới</option>
+                    <option value="Premium">👑 Premium</option>
+                    <option value="Phổ Biến">💚 Phổ Biến</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Ảnh -->
+        <div class="form-group">
+            <label for="field-image">Đường dẫn ảnh <span class="req">*</span></label>
+            <div class="image-input-wrap">
+                <input type="text" id="field-image" placeholder="image/ten-anh.jpg" required>
+                <div class="image-preview" id="image-preview">
+                    <span>Xem trước ảnh</span>
+                </div>
+            </div>
+            <p class="field-hint">Đặt ảnh vào thư mục <code>image/</code> rồi nhập tên file. VD: <code>image/bo-hong.jpg</code></p>
+        </div>
+
+        <!-- Mô tả ngắn -->
+        <div class="form-group">
+            <label for="field-description">Mô tả ngắn <span class="req">*</span></label>
+            <textarea id="field-description" rows="2" placeholder="Mô tả ngắn hiển thị trên thẻ sản phẩm (1-2 câu)"></textarea>
+        </div>
+
+        <!-- Ý nghĩa hoa -->
+        <div class="form-group">
+            <label for="field-meaning">
+                🌸 Ý nghĩa của hoa <span class="req">*</span>
+                <span class="label-hint">— Hiển thị khi khách bấm xem chi tiết</span>
+            </label>
+            <textarea id="field-meaning" rows="5" placeholder="Viết về ý nghĩa, biểu tượng, câu chuyện của loài hoa này... (càng đầy đủ càng tốt cho SEO)"></textarea>
+        </div>
+
+        <!-- Nổi bật -->
+        <div class="form-group form-check">
+            <label class="check-label">
+                <input type="checkbox" id="field-featured">
+                <span>Đánh dấu là sản phẩm <strong>nổi bật</strong></span>
+            </label>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn-cancel" id="btn-cancel-form">Huỷ</button>
+            <button type="submit" class="btn-save" id="btn-save-form">Lưu Sản Phẩm</button>
+        </div>
+    </form>
+</aside>
+
+<!-- ===== CONFIRM DELETE ===== -->
+<div class="confirm-dialog" id="confirm-dialog">
+    <div class="confirm-box">
+        <p class="confirm-icon">🗑️</p>
+        <h3>Xoá sản phẩm?</h3>
+        <p>Hành động này không thể hoàn tác.</p>
+        <div class="confirm-actions">
+            <button class="btn-cancel" id="confirm-cancel">Huỷ</button>
+            <button class="btn-delete-confirm" id="confirm-ok">Xoá</button>
+        </div>
+    </div>
+</div>
+
+<script src="products.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
